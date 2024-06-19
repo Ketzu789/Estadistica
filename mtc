@@ -1,0 +1,42 @@
+# Importar las bibliotecas necesarias
+import pandas as pd 
+from google.colab import files
+
+# Subir el archivo
+uploaded = files.upload()
+
+# Leer el archivo Excel
+file_path = list(uploaded.keys())[0]
+df = pd.read_excel(file_path)
+
+# Mostrar las primeras filas del DataFrame para observar los datos
+print("Primeras filas del DataFrame:")
+print(df.head())
+
+# Especificar el nombre de la columna que quieres analizar
+nombre_columna = 'Nombre'  # Reemplaza 'Nombre' con el nombre de la columna que te interesa
+
+# Calcular la media de la columna específica
+mean = df[nombre_columna].mean()
+print(f"\nMedia de la columna {nombre_columna}: {mean}")
+
+
+
+
+
+
+# Especificar el nombre de la columna que quieres analizar
+nombre_columna = 'Nombre'  # Reemplaza 'Nombre' con el nombre de la columna que te interesa
+
+# Calcular la mediana de la columna específica
+median = df[nombre_columna].median()
+print(f"\nMediana de la columna {nombre_columna}: {median}")
+
+
+
+# Especificar el nombre de la columna que quieres analizar
+nombre_columna = 'Nombre'  # Reemplaza 'Nombre' con el nombre de la columna que te interesa
+
+# Calcular la moda de la columna específica
+mode = df[nombre_columna].mode()[0]  # .mode() devuelve una serie, tomamos el primer valor
+print(f"\nModa de la columna {nombre_columna}: {mode}")
